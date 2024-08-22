@@ -42,7 +42,7 @@ App = {
     initContracts: async () => {
         App.networkId = await App.web3.eth.net.getId()
 
-        if (App.networkId !== 1) {
+        if (App.networkId !== 7171) {
             $("#submit").attr("disabled", true)
             alert ("Please switch your Metamask node to Mainnet");
             return
