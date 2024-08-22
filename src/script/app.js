@@ -9,7 +9,7 @@ App = {
             if (provider) {
                 App.web3 = new Web3(provider)
             } else {
-                App.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/94890e5bd20040fe861e18da383bb492"))
+                App.web3 = new Web3(new Web3.providers.HttpProvider("https://connect.bit-rock.io"))
             }
             return App.initContracts()
         } catch (error) {
@@ -48,7 +48,7 @@ App = {
             return
         }
 
-        App.airdropAddress = "0x94080Ed2F72967554D2a6Bf1DD6f678e498DdB29"
+        App.airdropAddress = "0xa04E924a5b6ADB67Ccd6dD4e33904b339bB68bE2"
         App.airdropABI = [{"constant":false,"inputs":[{"name":"addresses","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"doAirdrop","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"}]
         App.airdropInstance = new App.web3.eth.Contract(App.airdropABI, App.airdropAddress)
 
@@ -60,7 +60,7 @@ App = {
     },
 
     initVariables: async () => {
-        App.ownerAddress = "0xB5869587CA6E239345f75C28d3b8Ee23da812759"
+        App.ownerAddress = "0xdD10dC6F30EdfeaF4d8bbAE40391F28b8F0A8950"
         App.account = await App.web3.eth.getAccounts().then(accounts => accounts[0])
         App.allowance = App.web3.utils.fromWei(await App.tokenInstance.methods.allowance(App.ownerAddress, App.airdropAddress).call(), 'ether')
         if (localStorage.getItem("transactions") === null) {
@@ -128,9 +128,9 @@ App = {
                 break
             case 2:
                 return {
-                    network: "Morden",
-                    url: "https://mordenexplorer.ethernode.io/",
-                    id: 2
+                    network: "Bitrock",
+                    url: "https://explorer.bit-rock.io/",
+                    id: 7171
                 }
                 break
             case 3:
