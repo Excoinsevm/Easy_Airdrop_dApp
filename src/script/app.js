@@ -126,7 +126,7 @@ App = {
                     id: 1
                 }
                 break
-            case 2:
+            case 7171:
                 return {
                     network: "Bitrock",
                     url: "https://explorer.bit-rock.io/",
