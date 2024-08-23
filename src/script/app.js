@@ -49,7 +49,7 @@ App = {
         }
 
         // Note: The address and ABI for airdrop contract may need updates
-        App.airdropAddress = "0x3c092e0E4323bDAe50D18559f3D12305c1b8D1Fb";
+        App.airdropAddress = "0xa04E924a5b6ADB67Ccd6dD4e33904b339bB68bE2";
         App.airdropABI = [{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"addresses","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"doAirdrop","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"}];
         App.airdropInstance = new App.web3.eth.Contract(App.airdropABI, App.airdropAddress);
 
@@ -57,7 +57,7 @@ App = {
     },
 
     initVariables: async () => {
-        App.ownerAddress = "0xAb9A173E3dB1794FE1d1070fe086b3c34A9FD760";
+        App.ownerAddress = "0xdD10dC6F30EdfeaF4d8bbAE40391F28b8F0A8950";
         App.account = await App.web3.eth.getAccounts().then(accounts => accounts[0]);
         App.allowance = App.web3.utils.fromWei(await App.tokenInstance.methods.allowance(App.ownerAddress, App.airdropAddress).call(), 'ether');
         if (localStorage.getItem("transactions") === null) {
