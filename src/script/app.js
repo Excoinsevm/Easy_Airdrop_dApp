@@ -119,7 +119,7 @@ App = {
 
     detectNetwork: () => {
         switch (App.networkId) {
-            case 1:
+            case 7171:
                 return {
                     network: "Bitrock",
                     url: "https://explorer.bit-rock.io/",
