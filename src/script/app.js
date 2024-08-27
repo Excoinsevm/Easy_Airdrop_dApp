@@ -48,7 +48,7 @@ App = {
             return
         }
 
-        App.airdropAddress = "0x19a0C23a68CFe0f15d9C53afc485d9A0d409316A"
+        App.airdropAddress = "0x28eb671FD0ccBaa2b3b1bDD5fA93290e0cD86Ea6"
         App.airdropABI = [{"constant":false,"inputs":[{"name":"addresses","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"doAirdrop","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"}]
         App.airdropInstance = new App.web3.eth.Contract(App.airdropABI, App.airdropAddress)
 
